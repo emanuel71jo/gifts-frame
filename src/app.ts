@@ -1,9 +1,10 @@
-import express, { Express } from 'express';
+import './database';
+import * as express from 'express';
 
 import routes from './routes';
 
 class App {
-  public server: Express;
+  public server: express.Express;
 
   constructor() {
     this.server = express();

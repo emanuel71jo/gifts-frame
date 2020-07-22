@@ -1,5 +1,6 @@
 import "reflect-metadata";
-import { createConnection, Connection, getConnectionOptions } from 'typeorm';
+import { createConnection, Connection } from 'typeorm';
+import console = require("console");
 
 
 class Database {
@@ -10,9 +11,7 @@ class Database {
   }
 
   async init() {
-    const connectionOptions = await getConnectionOptions();
-
-    this.connection = await createConnection(connectionOptions);
+    this.connection = await createConnection();
   }
 }
 

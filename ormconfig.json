@@ -1,24 +1,18 @@
 {
-  "type": "mysql",
+  "type": "postgres",
   "host": "localhost",
-  "port": 3306,
-  "username": "docker",
+  "port": 5432,
+  "username": "postgres",
   "password": "docker",
   "database": "gifts",
-  "synchronize": true,
-  "logging": false,
   "entities": [
-    "src/app/entities/**/*.ts"
+    "src/app/entities/*.ts"
   ],
   "migrations": [
-    "src/database/migrations/**/*.ts"
-  ],
-  "subscribers": [
-    "src/database/subscriber/**/*.ts"
+    "src/database/migrations/*.ts"
   ],
   "cli": {
     "entitiesDir": "src/app/entities",
-    "migrationsDir": "src/database/migrations",
-    "subscribersDir": "src/database/subscriber"
+    "migrationsDir": "src/database/migrations"
   }
 }
