@@ -13,7 +13,8 @@
 - [ ] Listar eventos de um celebrante
 - [ ] Finalizar um evento
 - [ ] Cancelar um evento
-- [ ]
+- [ ] Autenticação do celebrante
+- [ ] Adicionar item a lista dos presentes já marcados.
 
 ---
 ## Rotas
