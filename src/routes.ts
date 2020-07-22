@@ -1,9 +1,9 @@
 import { Router } from 'express';
 
+import CelebrantController from '@controllers/CelebrantController';
+
 const routes = Router();
 
-routes.get('/', (req, res) => {
-  return res.json({ error: "Hello World" })
-})
+routes.post('/signup', CelebrantController.store);
 
 export default routes;
