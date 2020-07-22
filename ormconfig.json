@@ -1,0 +1,24 @@
+{
+  "type": "mysql",
+  "host": "localhost",
+  "port": 3306,
+  "username": "docker",
+  "password": "docker",
+  "database": "gifts",
+  "synchronize": true,
+  "logging": false,
+  "entities": [
+    "src/app/entities/**/*.ts"
+  ],
+  "migrations": [
+    "src/database/migrations/**/*.ts"
+  ],
+  "subscribers": [
+    "src/database/subscriber/**/*.ts"
+  ],
+  "cli": {
+    "entitiesDir": "src/app/entities",
+    "migrationsDir": "src/database/migrations",
+    "subscribersDir": "src/database/subscriber"
+  }
+}
