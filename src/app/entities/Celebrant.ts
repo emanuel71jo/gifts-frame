@@ -4,8 +4,10 @@ import {
   Column,
   BeforeInsert,
   BeforeUpdate,
+  OneToMany,
 } from 'typeorm';
 import { hashSync } from 'bcryptjs';
+import Party from './Party';
 
 @Entity('celebrants')
 class Celebrant {
@@ -17,6 +19,9 @@ class Celebrant {
 
   @Column()
   password: string;
+
+  @OneToMany((type) => Party, (party) => party.celebrant)
+  parties: Party[];
 
   @BeforeUpdate()
   @BeforeInsert()
