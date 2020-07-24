@@ -13,7 +13,7 @@
 ## Funcionalidade
 
 - [x] Cadastro do celebrante
-- [ ] Criar um evento
+- [x] Criar um evento
 - [ ] Adicionar itens a esse evento
 - [ ] Remover itens do evento
 - [ ] Listar itens de um evento
