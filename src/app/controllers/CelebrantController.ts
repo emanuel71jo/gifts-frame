@@ -19,7 +19,7 @@ class CelebrantController {
 
     await repository.save(celebrant);
 
-    return response.json(celebrant);
+    return response.json(celebrant.id);
   }
 }
 

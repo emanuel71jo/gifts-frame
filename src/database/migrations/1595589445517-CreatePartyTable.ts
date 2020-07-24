@@ -24,12 +24,12 @@ export class CreatePartyTable1595589445517 implements MigrationInterface {
             isNullable: false,
           },
           {
-            name: 'party_date_at',
+            name: 'partyDateAt',
             type: 'date',
             isNullable: false,
           },
           {
-            name: 'celebrant_id',
+            name: 'celebrantId',
             type: 'uuid',
             isNullable: false,
           },

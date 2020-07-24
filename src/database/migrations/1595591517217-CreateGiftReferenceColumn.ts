@@ -6,7 +6,7 @@ export class CreateGiftReferenceColumn1595591517217
     await queryRunner.createForeignKey(
       'gifts',
       new TableForeignKey({
-        columnNames: ['party_id'],
+        columnNames: ['partyId'],
         referencedColumnNames: ['id'],
         referencedTableName: 'parties',
         onDelete: 'CASCADE',
@@ -18,7 +18,7 @@ export class CreateGiftReferenceColumn1595591517217
   public async down(queryRunner: QueryRunner): Promise<void> {
     const table = await queryRunner.getTable('gifts');
     const foreignKey = table.foreignKeys.find(
-      (fk) => fk.columnNames.indexOf('party_id') !== -1
+      (fk) => fk.columnNames.indexOf('partyId') !== -1
     );
     await queryRunner.dropForeignKey('gifts', foreignKey);
   }

@@ -24,13 +24,13 @@ export class CreateGiftTable1595589378535 implements MigrationInterface {
             isNullable: false,
           },
           {
-            name: 'count_gifts',
+            name: 'countGifts',
             type: 'int',
             default: 0,
             isNullable: false,
           },
           {
-            name: 'party_id',
+            name: 'partyId',
             type: 'uuid',
             isNullable: false,
           },

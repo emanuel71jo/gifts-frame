@@ -13,7 +13,8 @@
     "baseUrl": "./src",
     "paths": {
       "@controllers/*": ["app/controllers/*"],
-      "@entities/*": ["app/entities/*"]
+      "@entities/*": ["app/entities/*"],
+      "@middlewares/*": ["app/middlewares/*"]
     }
   }
 }
