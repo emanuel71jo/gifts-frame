@@ -1,12 +1,15 @@
-import { MigrationInterface, QueryRunner, Table } from 'typeorm';
+import {
+  MigrationInterface,
+  QueryRunner,
+  Table,
+  TableForeignKey,
+} from 'typeorm';
 
-export class CreateCelebrantTable1595423437959 implements MigrationInterface {
+export class CreatePartyTable1595589445517 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
-    await queryRunner.query('CREATE EXTENSION IF NOT EXISTS "uuid-ossp"');
-
     await queryRunner.createTable(
       new Table({
-        name: 'celebrants',
+        name: 'parties',
         columns: [
           {
             name: 'id',
@@ -16,15 +19,19 @@ export class CreateCelebrantTable1595423437959 implements MigrationInterface {
             default: 'uuid_generate_v4()',
           },
           {
-            name: 'email',
+            name: 'name',
             type: 'varchar',
-            isUnique: true,
             isNullable: false,
           },
           {
-            name: 'password',
-            type: 'varchar',
-            isNullable: true,
+            name: 'party_date_at',
+            type: 'date',
+            isNullable: false,
+          },
+          {
+            name: 'celebrant_id',
+            type: 'uuid',
+            isNullable: false,
           },
         ],
       })
@@ -32,7 +39,6 @@ export class CreateCelebrantTable1595423437959 implements MigrationInterface {
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
-    await queryRunner.dropTable('celebrants');
-    await queryRunner.query('DROP EXTENSION IF EXISTS "uuid-ossp"');
+    await queryRunner.dropTable('parties');
   }
 }
