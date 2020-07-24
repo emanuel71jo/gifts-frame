@@ -10,10 +10,10 @@ class Gift {
   name: string;
 
   @Column()
-  count_gifts: number;
+  countGifts: number;
 
   @Column()
-  party_id: string;
+  partyId: string;
 
   @ManyToOne((type) => Party, (party) => party.gifts)
   party: Party;

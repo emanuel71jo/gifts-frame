@@ -17,10 +17,10 @@ class Party {
   name: string;
 
   @Column()
-  party_date_at: Date;
+  partyDateAt: Date;
 
   @Column()
-  celebrant_id: string;
+  celebrantId: string;
 
   @ManyToOne((type) => Celebrant, (celebrant) => celebrant.parties)
   celebrant: Celebrant;
