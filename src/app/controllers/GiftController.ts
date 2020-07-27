@@ -4,6 +4,23 @@ import Gift from '@entities/Gift';
 import Party from '@entities/Party';
 
 class GiftController {
+  async index(request: Request, response: Response) {
+    try {
+      const repository = getRepository(Gift);
+
+      const { party_id } = request.params;
+
+      const gifts = await repository.find({
+        where: { partyId: party_id },
+        select: ['id', 'name', 'countGifts'],
+      });
+
+      return response.json(gifts);
+    } catch (error) {
+      return response.status(401).json({ error: 'Party did not find' });
+    }
+  }
+
   async store(request: Request, response: Response) {
     const repository = getRepository(Gift);
 

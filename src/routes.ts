@@ -16,6 +16,7 @@ routes.use(authMiddleware);
 
 routes.post('/party', PartyController.store);
 
+routes.get('/gift/:party_id', GiftController.index);
 routes.post('/gift', GiftController.store);
 routes.delete('/gift/:id', GiftController.delete);
 
