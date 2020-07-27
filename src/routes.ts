@@ -14,6 +14,7 @@ routes.post('/signup', CelebrantController.store);
 
 routes.use(authMiddleware);
 
+routes.get('/party', PartyController.index);
 routes.post('/party', PartyController.store);
 
 routes.get('/gift/:party_id', GiftController.index);
