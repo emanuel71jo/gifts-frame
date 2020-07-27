@@ -1,9 +1,9 @@
 import {
   Entity,
   PrimaryGeneratedColumn,
-  Column,
   ManyToOne,
   OneToMany,
+  Column,
 } from 'typeorm';
 import Celebrant from './Celebrant';
 import Gift from './Gift';
@@ -21,6 +21,9 @@ class Party {
 
   @Column()
   celebrantId: string;
+
+  @Column()
+  canceledAt: Date;
 
   @ManyToOne((type) => Celebrant, (celebrant) => celebrant.parties)
   celebrant: Celebrant;

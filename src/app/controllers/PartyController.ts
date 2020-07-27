@@ -1,4 +1,4 @@
-import { Response, Request, response } from 'express';
+import { Response, Request } from 'express';
 import { getRepository } from 'typeorm';
 import { parseISO, isAfter } from 'date-fns';
 import Party from '@entities/Party';
@@ -12,7 +12,7 @@ class PartyController {
         where: {
           celebrantId: request.userId,
         },
-        select: ['id', 'name', 'partyDateAt'],
+        select: ['id', 'name', 'partyDateAt', 'canceledAt'],
       });
 
       return response.json(parties);
@@ -43,6 +43,29 @@ class PartyController {
     await repository.save(party);
 
     return response.json(party);
+  }
+
+  async delete(request: Request, response: Response) {
+    try {
+      const repository = getRepository(Party);
+
+      const { id } = request.params;
+
+      const party = await repository.findOne({
+        where: { id, canceledAt: null },
+      });
+
+      party.canceledAt = new Date();
+
+      repository.save(party);
+
+      delete party.partyDateAt;
+      delete party.celebrantId;
+
+      return response.json(party);
+    } catch (error) {
+      return response.status(404).json({ error: 'Party did not find' });
+    }
   }
 }
 
