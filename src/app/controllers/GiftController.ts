@@ -1,4 +1,4 @@
-import { Request, Response } from 'express';
+import { Request, Response, response } from 'express';
 import { getRepository } from 'typeorm';
 import Gift from '@entities/Gift';
 import Party from '@entities/Party';
@@ -34,6 +34,19 @@ class GiftController {
     await repository.save(gift);
 
     return response.json(gift);
+  }
+  async delete(request: Request, response: Response) {
+    try {
+      const repository = getRepository(Gift);
+
+      const { id } = request.params;
+
+      await repository.delete({ id });
+
+      return response.json({ message: 'Gift removed' });
+    } catch (error) {
+      return response.status(404).json({ error: 'Gift did not find' });
+    }
   }
 }
 

@@ -17,5 +17,6 @@ routes.use(authMiddleware);
 routes.post('/party', PartyController.store);
 
 routes.post('/gift', GiftController.store);
+routes.delete('/gift/:id', GiftController.delete);
 
 export default routes;
