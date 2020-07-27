@@ -17,7 +17,7 @@
 - [x] Adicionar itens a esse evento
 - [x] Remover itens do evento
 - [x] Listar itens de um evento
-- [ ] Listar eventos de um celebrante
+- [x] Listar eventos de um celebrante
 - [ ] Finalizar um evento
 - [ ] Cancelar um evento
 - [x] Autenticação do celebrante
