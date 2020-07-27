@@ -15,7 +15,7 @@
 - [x] Cadastro do celebrante
 - [x] Criar um evento
 - [x] Adicionar itens a esse evento
-- [ ] Remover itens do evento
+- [x] Remover itens do evento
 - [ ] Listar itens de um evento
 - [ ] Listar eventos de um celebrante
 - [ ] Finalizar um evento
