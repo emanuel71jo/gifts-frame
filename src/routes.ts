@@ -21,5 +21,6 @@ routes.delete('/party/:id', PartyController.delete);
 routes.get('/gift/:party_id', GiftController.index);
 routes.post('/gift', GiftController.store);
 routes.delete('/gift/:id', GiftController.delete);
+routes.put('/gift/:id', GiftController.update);
 
 export default routes;
