@@ -20,11 +20,22 @@
 - [x] Listar eventos de um celebrante
 - [x] Cancelar um evento
 - [x] Autenticação do celebrante
-- [ ] Adicionar item a lista dos presentes já marcados.
+- [x] Adicionar item a lista dos presentes já marcados.
 
 ---
 
 ## Rotas
+
+| Method | Rota              | Body                                                                                                                                     | Params                                                                                      | Descrição                                                           |
+| ------ | ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| GET    | _/gift/:party_id_ | empty                                                                                                                                    | **party_id\*:** Identificador da festa para listar os presentes dela                        | Rota que lista todos os presentes que podem ser levados nessa festa |
+| POST   | _/gift_           | **name\*:** Nome do presente para adicionar em uma festa. <br/> **party_id\*:** Identificador da festa a qual o presente será adicionado | empty                                                                                       | Rota que serve para adicionar os presentes de uma festa             |
+| DELETE | _/gift/:id_       | empty                                                                                                                                    | **id\*:** Identificador do presente que sera cancelado e/ou removido da festa               | Rota para cancelar um presente da festa                             |
+| GET    | _/party_          | empty                                                                                                                                    | empty                                                                                       | Lista todas as festas do usuário que esta autenticado               |
+| POST   | _/party_          | **name\*:** Nome da festa e/ou evento <br/> **party_date_at\*:** Data que ocorrerá o evento e/ou festa                                   | Rota que serve para cadastrar um novo evento e/ou festa para o usuário que esta autenticado |
+| DELETE | _/party/:id_      | empty                                                                                                                                    | **id\*:** Identificador da festa que será removida e/ou cancelada                           | Rota que serve para cancelar e/ou remover um evento                 |
+| POST   | _/signup_         | **email\*:** Email do celebrante <br/> **password\*:** Senha do celebrante                                                               | Rota que serve para o cadastro de um celebrante                                             |
+| POST   | _/authenticate_   |                                                                                                                                          | **email\*:** Email do celebrante <br/> **password\*:** Senha do celebrante                  | Rota que serve para o celebrante se autenticar                      |
 
 ---
 
